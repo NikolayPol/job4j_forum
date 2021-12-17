@@ -1,9 +1,13 @@
 package ru.job4j.forum.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.User;
+import ru.job4j.forum.store.AuthorityRepository;
+import ru.job4j.forum.store.UserRepository;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,21 +18,28 @@ import java.util.List;
  */
 @Service
 public class UserService {
-    private final List<User> posts = new ArrayList<>();
-
-    public UserService() {
-        posts.add(User.of("User 1"));
-    }
+    @Autowired
+    private PasswordEncoder encoder;
+    @Autowired
+    private AuthorityRepository authorities;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private UserService userService;
 
     public List<User> getAll() {
-        return posts;
+        return userRepository.findAll();
     }
 
     public User findById(int id) {
-        return posts.get(id);
+        return userRepository.findById(id).get();
     }
 
-    public void save(User post) {
-        posts.add(post);
+    public void save(User user) {
+        userRepository.save(user);
+    }
+
+    public User findUserByName(User user) {
+        return userRepository.findByUsername(user.getUsername());
     }
 }

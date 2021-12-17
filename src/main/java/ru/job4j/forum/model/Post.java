@@ -17,7 +17,6 @@ import java.util.Objects;
 @Builder
 @Setter
 @Getter
-@NoArgsConstructor
 @AllArgsConstructor
 public class Post {
     @Id
@@ -26,6 +25,10 @@ public class Post {
     private String name;
     private String description;
     private LocalDateTime created;
+
+    public Post() {
+        this.created = LocalDateTime.now();
+    }
 
     public static Post of(String name) {
         Post post = new Post();

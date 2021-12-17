@@ -1,5 +1,6 @@
 package ru.job4j.forum.service;
 
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.Post;
 import ru.job4j.forum.store.PostRepository;
@@ -14,13 +15,10 @@ import java.util.List;
  * @version 2.0 17.12.2021
  */
 @Service
+@AllArgsConstructor
 public class PostService {
 
     private final PostRepository posts;
-
-    public PostService(PostRepository posts) {
-        this.posts = posts;
-    }
 
     public List<Post> getAll() {
         List<Post> rsl = new ArrayList<>();
