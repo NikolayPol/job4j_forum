@@ -2,6 +2,7 @@ package ru.job4j.forum.service;
 
 import org.springframework.stereotype.Service;
 import ru.job4j.forum.model.Post;
+import ru.job4j.forum.store.PostRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,38 +11,32 @@ import java.util.List;
  * Класс PostService
  *
  * @author Nikolay Polegaev
- * @version 1.0 16.12.2021
+ * @version 2.0 17.12.2021
  */
 @Service
 public class PostService {
 
-    private final List<Post> posts = new ArrayList<>();
+    private final PostRepository posts;
 
-    public PostService() {
-        posts.add(Post.of(0, "Продаю машину", "Продаю машину ладу 01."));
-        posts.add(Post.of(1, "Продаю машину", "Продаю машину BMW."));
-        posts.add(Post.of(2, "Продаю машину", "Продаю машину AUDI."));
-
+    public PostService(PostRepository posts) {
+        this.posts = posts;
     }
 
     public List<Post> getAll() {
-        return posts;
+        List<Post> rsl = new ArrayList<>();
+        posts.findAll().forEach(rsl::add);
+        return rsl;
     }
 
     public Post findById(int id) {
-        return posts.get(id);
+        return posts.findById(id).get();
     }
 
     public void saveOrUpdate(Post post) {
-        if (post.getId() == 0) {
-            post.setId(posts.size());
-            posts.add(post);
-        } else {
-            posts.set(post.getId(), post);
-        }
+        posts.save(post);
     }
 
     public void delete(int id) {
-        posts.remove(id);
+        posts.delete(posts.findById(id).get());
     }
 }

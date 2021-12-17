@@ -2,6 +2,7 @@ package ru.job4j.forum.model;
 
 import lombok.*;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -9,14 +10,18 @@ import java.util.Objects;
  * Класс Post - объявление.
  *
  * @author Nikolay Polegaev
- * @version 1.0 16.12.2021
+ * @version 1.1 17.12.2021
  */
+@Entity
+@Table(name = "posts")
 @Builder
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
 public class Post {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String description;
