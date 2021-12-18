@@ -26,13 +26,13 @@ public class PostControl {
         return "post";
     }
 
-    @GetMapping("/update")
+    @PostMapping("/update")
     public String update(@RequestParam("id") int id, Model model) {
         model.addAttribute("post", postService.findById(id));
         return "edit";
     }
 
-    @GetMapping("/delete")
+    @PostMapping("/delete")
     public String delete(@RequestParam("id") int id) {
         postService.delete(id);
         return "redirect:/index";
