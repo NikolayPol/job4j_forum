@@ -14,7 +14,7 @@
     <groupId>org.example</groupId>
     <artifactId>job4j_forum</artifactId>
     <version>1</version>
-<!--    <packaging>war</packaging>-->
+    <packaging>war</packaging>
 
 <!--    <name>job4j_forum</name>-->
 
@@ -433,22 +433,19 @@
                     </configuration>
                 </plugin>
 
-                <plugin>
-                    <!-- Build an executable JAR -->
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.1.0</version>
-                    <configuration>
-                        <archive>
-                            <manifest>
-<!--                                <addClasspath>true</addClasspath>-->
-<!--                                <classpathPrefix>ru.job4j.forum/</classpathPrefix>-->
-<!--                                <mainClass>job4j_forum.ru.job4j.forum.Main</mainClass>-->
-                                <mainClass>src.main.java.ru.job4j.forum.Main</mainClass>
-                            </manifest>
-                        </archive>
-                    </configuration>
-                </plugin>
+<!--                <plugin>-->
+<!--                    &lt;!&ndash; Build an executable JAR &ndash;&gt;-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-jar-plugin</artifactId>-->
+<!--                    <version>3.1.0</version>-->
+<!--                    <configuration>-->
+<!--                        <archive>-->
+<!--                            <manifest>-->
+<!--                                <mainClass>ru.job4j.forum.Main</mainClass>-->
+<!--                            </manifest>-->
+<!--                        </archive>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
 
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
