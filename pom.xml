@@ -14,7 +14,7 @@
     <groupId>org.example</groupId>
     <artifactId>job4j_forum</artifactId>
     <version>1</version>
-    <packaging>war</packaging>
+<!--    <packaging>war</packaging>-->
 
 <!--    <name>job4j_forum</name>-->
 
@@ -423,15 +423,15 @@
                     <version>3.2.0</version>
                 </plugin>
 
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <version>2.3.2</version>
-                    <configuration>
-                        <source>14</source>
-                        <target>14</target>
-                    </configuration>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                    <version>2.3.2</version>-->
+<!--                    <configuration>-->
+<!--                        <source>14</source>-->
+<!--                        <target>14</target>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
 
 <!--                <plugin>-->
 <!--                    &lt;!&ndash; Build an executable JAR &ndash;&gt;-->
@@ -518,14 +518,14 @@
                     </executions>
                 </plugin>
 
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-war-plugin</artifactId>
-                    <version>3.3.0</version>
-                    <configuration>
-                        <failOnMissingWebXml>false</failOnMissingWebXml>
-                    </configuration>
-                </plugin>
+<!--                <plugin>-->
+<!--                    <groupId>org.apache.maven.plugins</groupId>-->
+<!--                    <artifactId>maven-war-plugin</artifactId>-->
+<!--                    <version>3.3.0</version>-->
+<!--                    <configuration>-->
+<!--                        <failOnMissingWebXml>false</failOnMissingWebXml>-->
+<!--                    </configuration>-->
+<!--                </plugin>-->
 
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
