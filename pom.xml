@@ -443,7 +443,7 @@
                             <manifest>
 <!--                                <addClasspath>true</addClasspath>-->
 <!--                                <classpathPrefix>ru.job4j.forum/</classpathPrefix>-->
-                                <mainClass>ru.job4j.forum.Main</mainClass>
+                                <mainClass>job4j_forum.ru.job4j.forum.Main</mainClass>
                             </manifest>
                         </archive>
                     </configuration>
