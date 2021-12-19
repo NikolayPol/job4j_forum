@@ -9,6 +9,7 @@ import ru.job4j.forum.Main;
 import ru.job4j.forum.model.Post;
 import ru.job4j.forum.store.PostRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -36,11 +37,10 @@ class PostServiceTest {
 
     @Test
     void getAllTest() {
-        List<Post> posts = List.of(
-                Post.of(1, "Тема1", "Описание1"),
-                Post.of(2, "Тема2", "Описание2"),
-                Post.of(3, "Тема3", "Описание3")
-        );
+        List<Post> posts = new ArrayList<>();
+        posts.add(Post.of(1, "Тема1", "Описание1"));
+        posts.add(Post.of(2, "Тема2", "Описание2"));
+        posts.add(Post.of(3, "Тема3", "Описание3"));
 
         when(postRepository.findAll()).thenReturn(posts);
 
